@@ -1,9 +1,0 @@
-C:\Users\AMA3694\source\repos\KnowledgeMailExtrator\OpenCalais\bin\Debug\netstandard2.0\OpenCalais.deps.json
-C:\Users\AMA3694\source\repos\KnowledgeMailExtrator\OpenCalais\bin\Debug\netstandard2.0\OpenCalais.dll
-C:\Users\AMA3694\source\repos\KnowledgeMailExtrator\OpenCalais\obj\Debug\netstandard2.0\OpenCalais.csprojResolveAssemblyReference.cache
-C:\Users\AMA3694\source\repos\KnowledgeMailExtrator\OpenCalais\obj\Debug\netstandard2.0\OpenCalais.csproj.CoreCompileInputs.cache
-C:\Users\AMA3694\source\repos\KnowledgeMailExtrator\OpenCalais\obj\Debug\netstandard2.0\OpenCalais.AssemblyInfoInputs.cache
-C:\Users\AMA3694\source\repos\KnowledgeMailExtrator\OpenCalais\obj\Debug\netstandard2.0\OpenCalais.AssemblyInfo.cs
-C:\Users\AMA3694\source\repos\KnowledgeMailExtrator\OpenCalais\bin\Debug\netstandard2.0\OpenCalais.pdb
-C:\Users\AMA3694\source\repos\KnowledgeMailExtrator\OpenCalais\obj\Debug\netstandard2.0\OpenCalais.dll
-C:\Users\AMA3694\source\repos\KnowledgeMailExtrator\OpenCalais\obj\Debug\netstandard2.0\OpenCalais.pdb

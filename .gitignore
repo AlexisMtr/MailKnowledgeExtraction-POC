@@ -1,4 +1,6 @@
-.vs/
-AddinExtrator/obj/
-OpenCalais/obj/
-ConsoleApp/obj/
+.vs/*
+AddinExtrator/obj/*
+OpenCalais/obj/*
+ConsoleApp/obj/*
+AddinExtrator/bin/*
+packages/
