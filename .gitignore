@@ -4,3 +4,8 @@ OpenCalais/obj/*
 ConsoleApp/obj/*
 AddinExtrator/bin/*
 packages/
+Common/bin/
+Common/obj/
+ConsoleApp/bin/
+GUI/obj/
+OpenCalais/bin/
