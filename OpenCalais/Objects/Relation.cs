@@ -6,7 +6,5 @@ namespace OpenCalais.Objects
     {
         public ObjectType Type { get; set; }
         public IEnumerable<Instance> Instances { get; set; }
-        public ObjectGroupType GroupType { get; set; }
-        public bool ForEndUserDisplay { get; set; }
     }
 }
