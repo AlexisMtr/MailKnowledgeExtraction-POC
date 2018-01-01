@@ -8,6 +8,8 @@ namespace Common.Converters
     {
         public static IEnumerable<Company> Convert(IEnumerable<OC.Entity> companies)
         {
+            if (companies == null) return null;
+
             var companiesEntities = new List<Company>();
 
             foreach(var company in companies)

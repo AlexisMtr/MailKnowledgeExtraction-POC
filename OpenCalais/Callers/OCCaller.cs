@@ -23,7 +23,7 @@ namespace OpenCalais.Callers
 
         public async Task<TResult> TranformFromResult<TResult>(string source) where TResult : ITransform<TResult>
         {
-            TResult item = default(TResult);
+            TResult item = Activator.CreateInstance<TResult>();
 
             var response = await this.client.PostAsync($"https://api.thomsonreuters.com/permid/calais", new StringContent(source));
             var result = OCParser.Parse(await response.Content.ReadAsStringAsync());

@@ -1,0 +1,15 @@
+﻿Bing : Microsoft donne de la nuance à la recherche avec l’IA 
+Technologie : Le géant du logiciel veut que son moteur de recherche Bing fournisse des réponses plus utiles aux internautes, qu’Outlook identifie les emails importants et Word aide à écrire des mémos plus percutants. Et ce grâce à une dose d'intelligence artificielle.
+ 
+Par La rédaction de ZDNet.fr | Jeudi 14 Décembre 2017 
+  
+
+Si vous demandez à Google "Est-ce que Hamilton est une bonne comédie musicale ?" Il renvoie un lien vers Quora, le service question-réponse où d’autres internautes posent la même question. Le lien suivant est un article publié dans Slate l'année dernière.
+Microsoft pense pouvoir faire mieux. À partir de mercredi, l'entreprise commencera à fournir des réponses plus nuancées, alimentées par un logiciel d'intelligence artificielle conçu pour identifier différents points de vue.
+
+De l'IA dans tous les produits Microsoft 
+"Ce n'est pas seulement que vous voyez plus de réponses apparaître en haut des résultats de recherche, mais vous aurez aussi plus de perspectives" a déclaré Harry Shum, directeur de l'IA chez Microsoft, lors d'un événement à San Francisco mercredi. "La recherche a vraiment évolué, ce n'est plus 10 liens bleus."
+Bing représente moins d'un tiers des parts de marché de la recherche sur ordinateur. Et qui se soucie de savoir comment un résultat de recherche apparaît sur la page tant que celui-ci est utile ?
+Ces efforts sont le dernier exemple de la façon dont Microsoft utilise l'IA pour améliorer ses produits. La société a poussé cette technologie de manière très diverses, y compris pour concevoir des programmes de robots conversationnels conçus pour aider les entreprises à communiquer plus facilement avec les clients via un ordinateur.
+L’éditeur utilise aussi l'IA pour amplifier des applications telles que Seeing AI, qui traduit des documents, reconnaît des amis et lit le texte d'un document à voix haute. Désormais, Microsoft estime que son application sera en mesure d'identifier la monnaie et les couleurs et de générer un ton pour identifier la luminosité de l’environnement.
+Microsoft a indiqué qu'il continuait de trouver d'autres moyens pour l'IA d'améliorer ses produits, notamment le filtrage automatique des emails pour trouver les messages les plus importants, le tri des données Excel et la recherche d'acronymes pour l’écriture sur Word. 
