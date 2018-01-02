@@ -32,7 +32,15 @@ namespace WabAPI.Controllers
         public IActionResult Get(string id)
         {
             var mail = this.database.GetCollection<MailItem>("mails").AsQueryable().FirstOrDefault(e => e.Id.Equals(id));
-            return Ok(mail);
+
+            var mailDetails = new MailDetailsDto
+            {
+                Mail = Mapper.Map<MailItemDto>(mail),
+                Body = Mapper.Map<DocumentDto>(mail.Body),
+                Documents = Mapper.Map<IEnumerable<DocumentDto>>(mail.Attachments)
+            };
+
+            return Ok(mailDetails);
         }
     }
 }

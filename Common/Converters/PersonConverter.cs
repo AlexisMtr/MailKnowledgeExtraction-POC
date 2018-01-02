@@ -34,7 +34,7 @@ namespace Common.Converters
                 personEntities.Add(new Person
                 {
                     Name = entity.Value.Name,
-                    EmailAddress = email != null ? email.Name : string.Empty
+                    EmailAddress = email?.Name
                 });
             }
 

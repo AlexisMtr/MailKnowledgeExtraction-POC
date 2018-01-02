@@ -18,7 +18,8 @@ namespace OpenCalais.Callers
             this.client.DefaultRequestHeaders.TryAddWithoutValidation("outputFormat", "application/json");
             this.client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "text/raw");
             this.client.DefaultRequestHeaders.TryAddWithoutValidation("omitOutputtingOriginalText", "true");
-            this.client.DefaultRequestHeaders.TryAddWithoutValidation("x-calais-language", language);
+            if(!string.IsNullOrEmpty(language))
+                this.client.DefaultRequestHeaders.TryAddWithoutValidation("x-calais-language", language);
         }
 
         public async Task<TResult> TranformFromResult<TResult>(string source) where TResult : ITransform<TResult>

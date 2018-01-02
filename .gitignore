@@ -10,3 +10,4 @@ Common/bin/
 Common/obj/
 WabAPI/bin/
 WabAPI/obj/
+*.pdf

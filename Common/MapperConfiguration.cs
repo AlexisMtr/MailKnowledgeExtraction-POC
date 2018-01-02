@@ -7,8 +7,12 @@ namespace Common
 {
     public class MapperConfiguration
     {
+        public static bool MapperConfigured { get; set; }
+
         public static void ConfigureMapper()
         {
+            if (MapperConfigured) return;
+
             var cfg = new MapperConfigurationExpression();
 
             cfg.CreateMap<OC.Topic, Topic>();
@@ -16,8 +20,10 @@ namespace Common
             cfg.CreateMap<OC.SocialTag, Tag>()
                 .ForMember(d => d.Value, opt => opt.MapFrom(s => s.Name))
                 .ForMember(d => d.Importance, opt => opt.MapFrom(s => s.Importance));
+            cfg.CreateMap<OC.Relations.ContactDetails, Contact>();
 
             Mapper.Initialize(cfg);
+            MapperConfigured = true;
         }
     }
 }
