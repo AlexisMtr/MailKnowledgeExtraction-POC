@@ -1,0 +1,5 @@
+<div *ngFor="let i of Items">
+    <div>{{i.Sender}}</div>
+    <div>{{i.Object}} - le {{i.ReceivedOn | date:'dd/MM/yyyy'}}</div>
+    <div>{{i.AttachmentsCount}} pièce(s) jointe(s)</div>
+</div>

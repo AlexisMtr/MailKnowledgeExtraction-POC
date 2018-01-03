@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+}
+
+.master {
+    flex: 2
+}
+.details {
+    flex: 8;
+    margin-left: 25px;
+}
+
+.masterItems {
+    margin: 2px;
+    padding: 15px;
+    background-color: rgb(207, 204, 204);
+}

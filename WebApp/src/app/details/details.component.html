@@ -1,0 +1,16 @@
+<div class="mailDetailsHeader">
+    <h1>
+        {{item.mail.object}}
+    </h1>
+    <h2>
+        {{item.mail.sender}}<br>
+        le {{item.mail.receivedOn | date:"dd/MM/yyyy"}}
+    </h2>
+</div>
+<div class="mailDetailsItems">
+    <div style="display: flex">
+        <div (click)="OnSelect(item.body)" class="itemAttachments">MailBody</div>
+        <div *ngFor="let d of item.documents" (click)="OnSelect(d)" class="itemAttachments">{{d.name}}</div>
+    </div>
+    <app-mail-document-cmp [item]="selectedDocument"></app-mail-document-cmp>
+</div>

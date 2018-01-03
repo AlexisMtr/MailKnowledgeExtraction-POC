@@ -1,0 +1,55 @@
+<div style="display: flex; flex-direction: column">
+    <h2>{{item.name}}</h2>
+    <div style="display: flex">
+        <div *ngIf="item.technologies" style="flex: 2">
+            <h4>Technologies</h4>
+            <ul>
+                <li *ngFor="let i of item.technologies">{{i}}</li>
+            </ul>
+        </div>
+        <div *ngIf="item.urls" style="flex: 2">
+            <h4>Urls</h4>
+            <ul>
+                <li *ngFor="let i of item.urls">{{i}}</li>
+            </ul>
+        </div>
+        <div *ngIf="item.industryTerms" style="flex: 2">
+            <h4>Termes industriels</h4>
+            <ul>
+                <li *ngFor="let i of item.industryTerms">{{i}}</li>
+            </ul>
+        </div>
+        <div *ngIf="item.topics" style="flex: 2">
+            <h4>Topics</h4>
+            <ul>
+                <li *ngFor="let i of item.topics">{{i.name}} ({{i.score}})</li>
+            </ul>
+        </div>
+    </div>
+    <div style="display: flex">
+        <div *ngIf="item.tags" style="flex: 2">
+            <h4>Tags</h4>
+            <ul>
+                <li *ngFor="let i of item.tags">{{i.value}} ({{i.importance}})</li>
+            </ul>
+        </div>
+        <div *ngIf="item.companies" style="flex: 2">
+            <h4>Entreprises</h4>
+            <ul>
+                <li *ngFor="let i of item.companies"><a href="{{i.permIdLink}}">{{i.name}}</a></li>
+            </ul>
+        </div>
+        <div *ngIf="item.persons" style="flex: 2">
+            <h4>Individus</h4>
+            <ul>
+                <li *ngFor="let i of item.persons">{{i.name}}</li>
+            </ul>
+        </div>
+        <div *ngIf="item.contacts" style="flex: 2">
+            <h4>Informations de contact</h4>
+            <ul>
+                <li *ngFor="let i of item.contacts">{{i.telephone}} - {{i.emailAddress}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
