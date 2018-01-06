@@ -9,7 +9,7 @@
 </div>
 <div class="mailDetailsItems">
     <div style="display: flex">
-        <div (click)="OnSelect(item.body)" class="itemAttachments">MailBody</div>
+        <div (click)="OnSelect(item.body)" class="itemAttachments">{{item.body.name}}</div>
         <div *ngFor="let d of item.documents" (click)="OnSelect(d)" class="itemAttachments">{{d.name}}</div>
     </div>
     <app-mail-document-cmp [item]="selectedDocument"></app-mail-document-cmp>

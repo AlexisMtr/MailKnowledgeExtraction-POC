@@ -32,6 +32,8 @@ namespace Common
         public IEnumerable<Entity> Urls { get; set; }
         [BsonElement]
         public IEnumerable<Contact> Contacts { get; set; }
+        [BsonElement]
+        public IEnumerable<Entity> ProgrammingLanguage { get; set; }
 
 
         public Document Transform(Dictionary<string, OC.OpenCalaisObject> source)
@@ -71,6 +73,13 @@ namespace Common
                 return false;
             }).Select(e => e.Value as OC.Relations.ContactDetails);
             this.Contacts = Mapper.Map<IEnumerable<Contact>>(contactsSource);
+
+            var languageSource = source.Where(e =>
+            {
+                if (e.Value is OC.Entity i) return i.Type == OC.ObjectType.ProgrammingLanguage;
+                return false;
+            }).Select(e => e.Value as OC.Entity);
+            this.ProgrammingLanguage = Mapper.Map<IEnumerable<Entity>>(languageSource);
 
             this.Persons = PersonConverter.Convert(source.Where(e => e.Value is OC.Entity).ToDictionary(e => e.Key, e => e.Value as OC.Entity),
                 source.Where(e => e.Value is OC.Relation).Select(e => e.Value as OC.Relation));

@@ -9,15 +9,8 @@ namespace AddinExtrator
 {
     public partial class ThisAddIn
     {
-        Outlook.NameSpace outlookNameSpace;
-
         private void ThisAddIn_Startup(object sender, EventArgs e)
         {
-            outlookNameSpace = this.Application.GetNamespace("MAPI");
-            var inbox = outlookNameSpace.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderInbox);
-
-            var items = inbox.Items;
-            items.ItemAdd += new Outlook.ItemsEvents_ItemAddEventHandler(Items_ItemAdd);
         }
 
         private async void Items_ItemAdd(object item)
@@ -33,7 +26,7 @@ namespace AddinExtrator
                     Sender = mail.Sender.Address
                 };
 
-                var caller = new OCCaller(new HttpClient(), "ZJJDBVG8tmdWjaALvTlVnTl1boVd6DXF", "French");
+                var caller = new OCCaller(new HttpClient(), "<apikey>", "French");
                 using (var processor = new MailProcessor(caller))
                 {
                     var mailBodyDocumentTask = processor.AnalyazeMailBody<Document>(mail.Body);

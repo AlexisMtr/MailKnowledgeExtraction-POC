@@ -37,6 +37,7 @@ namespace OpenCalais.Objects
         OperatingSystem,
         Continent,
         City,
-        Currency
+        Currency,
+        ProvinceOrState
     }
 }

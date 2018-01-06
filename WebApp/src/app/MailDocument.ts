@@ -8,6 +8,7 @@ export class MailDocument {
     public companies : Company[];
     public persons : Person[];
     public contacts : Contact[];
+    public programmingLanguages : string[];
 }
 
 export class Topic {

@@ -1,6 +1,6 @@
 <div class="container">
     <div class="master">
-        <div *ngFor="let i of Items" (click)="OnSelect(i)" class="masterItems">
+        <div *ngFor="let i of Items" (click)="OnSelect(i)" class="masterItems" [ngClass]="{selected: i.id == Mail.mail.id}">
             <div>
                 <h3>
                     {{i.object}}<br>

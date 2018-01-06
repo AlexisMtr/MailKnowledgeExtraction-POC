@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { MailDetailsItem } from '../MailDetailsItem';
 import { MailDocument } from '../MailDocument';
 
@@ -7,13 +7,18 @@ import { MailDocument } from '../MailDocument';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent implements OnInit {
+export class DetailsComponent implements OnInit, OnChanges {
 
     @Input() item : MailDetailsItem;
     public selectedDocument : MailDocument;
     constructor() { }
 
     ngOnInit() {
+        this.selectedDocument = null;
+    }
+
+    ngOnChanges(changes: any) {
+        this.selectedDocument = this.item.body;
     }
 
     public OnSelect(d: MailDocument) : void {

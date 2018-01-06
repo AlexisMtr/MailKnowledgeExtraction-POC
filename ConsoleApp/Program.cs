@@ -18,7 +18,7 @@ namespace ConsoleApp
             var entry = File.ReadAllText(@"F:\developpement\POC-GC\body.txt");
             var attachmentFileName = @"F:\developpement\POC-GC\attachment.pdf";
 
-            using (var caller = new OCCaller(new HttpClient(), "ZJJDBVG8tmdWjaALvTlVnTl1boVd6DXF", string.Empty))
+            using (var caller = new OCCaller(new HttpClient(), "<apikey>", string.Empty))
             {
                 var pdfAsText = ExtractTextFromPdf(attachmentFileName);
 

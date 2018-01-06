@@ -14,5 +14,6 @@ namespace WabAPI.Dtos
         public IEnumerable<Company> Companies { get; set; }
         public IEnumerable<Person> Persons { get; set; }
         public IEnumerable<Contact> Contacts { get; set; }
+        public IEnumerable<string> ProgrammingLanguages { get; set; }
     }
 }

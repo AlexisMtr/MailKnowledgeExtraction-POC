@@ -20,7 +20,15 @@ namespace AddinExtrator.ItemProcess
 
         public async Task<T> AnalyzeAttachment<T>(Microsoft.Office.Interop.Outlook.Attachment attachment) where T : ITransform<T>
         {
-            attachment.SaveAsFile($@"C:\poc-gc\{attachment.FileName}");
+            try
+            {
+                attachment.SaveAsFile($@"C:\poc-gc\{attachment.FileName}");
+            }
+            catch(DirectoryNotFoundException)
+            {
+                Directory.CreateDirectory(@"C:\poc-gc\");
+                attachment.SaveAsFile($@"C:\poc-gc\{attachment.FileName}");
+            }
 
             var ext = this.GetExtensionFile(attachment.FileName);
             string fileAsString = string.Empty;

@@ -17,7 +17,8 @@ namespace WabAPI
             cfg.CreateMap<Document, DocumentDto>()
                 .ForMember(d => d.IndustryTerms, opt => opt.MapFrom(s => s.IndustryTerms.Select(e => e.Value)))
                 .ForMember(d => d.Technologies, opt => opt.MapFrom(s => s.Technologies.Select(e => e.Value)))
-                .ForMember(d => d.Urls, opt => opt.MapFrom(s => s.Urls.Select(e => e.Value)));
+                .ForMember(d => d.Urls, opt => opt.MapFrom(s => s.Urls.Select(e => e.Value)))
+                .ForMember(d => d.ProgrammingLanguages, opt => opt.MapFrom(s => s.ProgrammingLanguage.Select(e => e.Value)));
 
             Mapper.Initialize(cfg);
         }

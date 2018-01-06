@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCalais", "OpenCalais\Op
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{E640F04E-DC47-41C1-9C09-91969D9EA639}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{D08D0FF0-CCEF-48A9-982E-572D4F06C422}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{D08D0FF0-CCEF-48A9-982E-572D4F06C422}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WabAPI", "WabAPI\WabAPI.csproj", "{F5525913-0DF6-4381-BF1A-C75ACEB4B803}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WabAPI", "WabAPI\WabAPI.csproj", "{F5525913-0DF6-4381-BF1A-C75ACEB4B803}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

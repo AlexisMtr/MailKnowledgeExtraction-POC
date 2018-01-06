@@ -10,7 +10,7 @@
         <div *ngIf="item.urls" style="flex: 2">
             <h4>Urls</h4>
             <ul>
-                <li *ngFor="let i of item.urls">{{i}}</li>
+                <li *ngFor="let i of item.urls"><a href="{{i}}">{{i}}</a></li>
             </ul>
         </div>
         <div *ngIf="item.industryTerms" style="flex: 2">
@@ -36,7 +36,10 @@
         <div *ngIf="item.companies" style="flex: 2">
             <h4>Entreprises</h4>
             <ul>
-                <li *ngFor="let i of item.companies"><a href="{{i.permIdLink}}">{{i.name}}</a></li>
+                <li *ngFor="let i of item.companies">
+                    <a *ngIf="i.permIdLink !== ''" href="{{i.permIdLink}}">{{i.name}}</a>
+                    <span *ngIf="i.permIdLink === ''">{{i.name}}</span>
+                </li>
             </ul>
         </div>
         <div *ngIf="item.persons" style="flex: 2">
@@ -49,6 +52,14 @@
             <h4>Informations de contact</h4>
             <ul>
                 <li *ngFor="let i of item.contacts">{{i.telephone}} - {{i.emailAddress}}</li>
+            </ul>
+        </div>
+    </div>
+    <div style="display: flex">
+        <div *ngIf="item.programmingLanguages" style="flex: 2">
+            <h4>Langages</h4>
+            <ul>
+                <li *ngFor="let i of item.programmingLanguages">{{i}}</li>
             </ul>
         </div>
     </div>
