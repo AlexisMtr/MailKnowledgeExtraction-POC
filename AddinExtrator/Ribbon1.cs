@@ -51,30 +51,37 @@ namespace AddinExtrator
                     Sender = mail.Sender.Address
                 };
 
-                using (var dbHelper = new MongoHelper())
-                using (var caller = new OCCaller(new WebClient(), "<apikey>", string.Empty))
-                using (var processor = new MailProcessor(caller))
+                try
                 {
-                    foreach (Microsoft.Office.Interop.Outlook.Attachment attachment in mail.Attachments)
+                    using (var dbHelper = new MongoHelper())
+                    using (var caller = new OCCaller(new WebClient(), "<apikey>", string.Empty))
+                    using (var processor = new MailProcessor(caller))
                     {
-                        var ext = attachment.FileName.Split('.').Last();
-                        if (!ext.Equals("pdf") && !ext.Equals("txt")) continue;
-
-                        var attachmentDocument = processor.AnalyzeAttachment<Document>(attachment).Result;
-                        if (string.IsNullOrEmpty(attachmentDocument.Name))
+                        foreach (Microsoft.Office.Interop.Outlook.Attachment attachment in mail.Attachments)
                         {
-                            attachmentDocument.Name = attachment.DisplayName;
+                            var ext = attachment.FileName.Split('.').Last();
+                            if (!ext.Equals("pdf") && !ext.Equals("txt") && !ext.Equals("docx")) continue;
+
+                            var attachmentDocument = processor.AnalyzeAttachment<Document>(attachment).Result;
+                            if (string.IsNullOrEmpty(attachmentDocument.Name))
+                            {
+                                attachmentDocument.Name = attachment.DisplayName;
+                            }
+                            mailItem.Attachments.Add(attachmentDocument);
                         }
-                        mailItem.Attachments.Add(attachmentDocument);
+                        var mailBodyDocument = processor.AnalyazeMailBody<Document>(mail.Body).Result;
+                        mailBodyDocument.Name = "Body";
+                        mailItem.Body = mailBodyDocument;
+
+                        dbHelper.Save(mailItem);
                     }
-                    var mailBodyDocument = processor.AnalyazeMailBody<Document>(mail.Body).Result;
-                    mailBodyDocument.Name = "Body";
-                    mailItem.Body = mailBodyDocument;
 
-                    dbHelper.Save(mailItem);
+                    MessageBox.Show("Traitement terminé");
                 }
-
-                MessageBox.Show("Email analysé avec succès");
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Erreur pendant le traitement");
+                }
             }
         }
     }
