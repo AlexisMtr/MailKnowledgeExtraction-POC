@@ -39,7 +39,10 @@ namespace AddinExtrator
                 }
                 foreach(Microsoft.Office.Interop.Outlook.Recipient receiver in mail.Recipients)
                 {
-                    receivers.Add(receiver.Address);
+                    if (string.IsNullOrEmpty(receiver.Name))
+                        receivers.Add(receiver.Address);
+                    else
+                        receivers.Add(receiver.Name);
                 }
 
                 var mailItem = new MailItem
@@ -47,9 +50,13 @@ namespace AddinExtrator
                     Id = Guid.NewGuid().ToString(),
                     ReceivedOn = mail.CreationTime,
                     Receivers = receivers,
-                    Object = mail.ConversationTopic,
-                    Sender = mail.Sender.Address
+                    Object = mail.ConversationTopic
                 };
+
+                if (string.IsNullOrEmpty(mail.Sender.Name))
+                    mailItem.Sender = mail.SenderEmailAddress;
+                else
+                    mailItem.Sender = mail.Sender.Name;
 
                 try
                 {

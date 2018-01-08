@@ -51,13 +51,13 @@
             // group1
             // 
             this.group1.Items.Add(this.button1);
-            this.group1.Label = "group1";
             this.group1.Name = "group1";
             // 
             // button1
             // 
             this.button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.button1.Label = "button1";
+            this.button1.Image = global::AddinExtrator.Properties.Resources.Icon_Analyze;
+            this.button1.Label = "Analyser";
             this.button1.Name = "button1";
             this.button1.ShowImage = true;
             this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.RaiseBtnClick);
